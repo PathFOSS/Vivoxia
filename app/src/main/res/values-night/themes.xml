@@ -1,0 +1,231 @@
+<resources>
+    <style name="Theme.Vivoxia" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/vivoxia</item>
+        <item name="colorPrimaryVariant">@color/vivoxia</item>
+        <item name="colorOnPrimary">@color/natural_white</item>
+
+        <item name="colorSecondary">@color/vivoxia</item>
+        <item name="colorSecondaryVariant">@color/vivoxia</item>
+        <item name="colorOnSecondary">@color/natural_white</item>
+        <item name="colorPrimaryDark">@color/vivoxia_background</item>
+
+        <item name="android:navigationBarColor">@color/vivoxia_foreground</item>
+
+        <item name="textInputStyle">@style/vivoxia_til_style</item>
+    </style>
+
+    <style name="vivoxia_list_text">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/natural_white</item>
+    </style>
+
+    <style name="vivoxia_timer_item" parent="vivoxia_text_bold_center">
+        <item name="android:layout_marginTop">@dimen/spacing</item>
+        <item name="android:paddingTop">@dimen/spacing</item>
+        <item name="android:paddingBottom">@dimen/spacing</item>
+        <item name="android:background">@drawable/background_dropdown</item>
+    </style>
+
+    <style name="vivoxia_button">
+        <item name="android:background">@drawable/background_button</item>
+        <item name="backgroundTint">@color/vivoxia</item>
+        <item name="android:textColor">@color/vivoxia_background</item>
+        <item name="android:layout_marginTop">@dimen/spacing</item>
+    </style>
+
+    <style name="vivoxia_time_text">
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:padding">@dimen/spacing</item>
+        <item name="android:textSize">@dimen/time_text_size</item>
+    </style>
+
+    <style name="vivoxia_dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_marginTop">@dimen/spacing</item>
+        <item name="endIconTint">@color/natural_white</item>
+        <item name="boxStrokeColor">@color/vivoxia</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="hintTextColor">@color/vivoxia</item>
+        <item name="android:textColorHighlight">@color/vivoxia</item>
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius</item>
+        <item name="errorEnabled">false</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+
+    <style name="vivoxia_popup_menu" parent="Widget.MaterialComponents.PopupMenu.ListPopupWindow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="vivoxia_top_bar">
+        <item name="android:background">@color/vivoxia_background</item>
+        <item name="imageButtonStyle">@style/vivoxia_top_bar_image_button</item>
+        <item name="android:textViewStyle">@style/vivoxia_top_bar_text_view</item>
+    </style>
+
+    <style name="vivoxia_top_bar_text_view">
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
+
+    <style name="vivoxia_text_title">
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/title_text_size</item>
+    </style>
+
+    <style name="vivoxia_top_bar_image_button">
+        <item name="android:scaleX">0.4</item>
+        <item name="android:scaleY">0.4</item>
+    </style>
+
+    <style name="vivoxia_bottom_bar">
+        <item name="android:background">@color/vivoxia_foreground</item>
+        <item name="android:textViewStyle">@style/vivoxia_bottom_bar_text_view</item>
+    </style>
+
+    <style name="vivoxia_bottom_bar_text_view">
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/tiny_text_size</item>
+    </style>
+
+    <style name="vivoxia_slider">
+        <item name="trackHeight">10dp</item>
+        <item name="thumbRadius">15dp</item>
+        <item name="haloColor">@color/vivoxia</item>
+        <item name="thumbColor">@color/light_gray</item>
+        <item name="trackColorActive">@color/light_gray</item>
+        <item name="trackColorInactive">@color/natural_white</item>
+        <item name="tickVisible">false</item>
+        <item name="android:enabled">false</item>
+        <item name="android:stepSize">1</item>
+    </style>
+
+    <style name="vivoxia_slider_enabled">
+        <item name="trackHeight">10dp</item>
+        <item name="thumbRadius">15dp</item>
+        <item name="haloColor">@color/vivoxia</item>
+        <item name="thumbColor">@color/vivoxia</item>
+        <item name="trackColorActive">@color/vivoxia</item>
+        <item name="trackColorInactive">@color/natural_white</item>
+        <item name="tickVisible">false</item>
+        <item name="android:stepSize">1</item>
+        <item name="labelStyle">@style/vivoxia_slider_label</item>
+    </style>
+
+    <style name="vivoxia_slider_label" parent="Widget.MaterialComponents.Tooltip">
+        <item name="backgroundTint">@color/vivoxia_foreground</item>
+        <item name="android:textColor">@color/natural_white</item>
+    </style>
+
+    <style name="vivoxia_text_secondary_left">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">@color/light_gray</item>
+    </style>
+
+    <style name="vivoxia_text_secondary_right">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="vivoxia_text_bold_left">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/natural_white</item>
+    </style>
+
+    <style name="vivoxia_text_normal_left">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/natural_white</item>
+    </style>
+
+    <style name="vivoxia_text_bold_center">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/spacing</item>
+    </style>
+
+    <style name="vivoxia_text_normal_center">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/spacing</item>
+    </style>
+
+    <style name="vivoxia_text_bold_right">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="vivoxia_text_normal_right">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="vivoxia_fragment">
+        <item name="android:background">@color/vivoxia_background</item>
+        <item name="android:padding">@dimen/spacing</item>
+    </style>
+
+    <style name="vivoxia_fragment_scroll">
+        <item name="android:background">@color/vivoxia_background</item>
+        <item name="android:paddingLeft">@dimen/spacing</item>
+        <item name="android:paddingRight">@dimen/spacing</item>
+    </style>
+
+    <style name="vivoxia_dialog">
+        <item name="android:background">@drawable/background_dialog</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="vivoxia_graph">
+        <item name="backgroundTint">@color/vivoxia</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="vivoxia_til_style" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/vivoxia</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="hintTextColor">@color/vivoxia</item>
+        <item name="android:textColorHighlight">@color/vivoxia</item>
+        <item name="boxCornerRadiusTopStart">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/corner_radius</item>
+        <item name="errorEnabled">false</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="vivoxia_autocomplete_text_view">
+        <item name="android:background">@color/vivoxia_foreground</item>
+        <item name="android:textColor">@color/natural_white</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:paddingBottom">@dimen/spacing</item>
+    </style>
+
+    <style name="vivoxia_linear_layout_scrollable">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">@dimen/spacing</item>
+        <item name="android:paddingBottom">@dimen/scroll_empty_space</item>
+    </style>
+
+</resources>

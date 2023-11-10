@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/vivoxia_fragment">
+
+    <include android:id="@+id/til_name"
+        layout="@layout/text_input_layout"/>
+
+    <include android:id="@+id/til_portion"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/til_unit"
+        android:layout_marginTop="@dimen/spacing"
+        android:layout_marginEnd="@dimen/spacing"/>
+
+    <include android:id="@+id/til_unit"
+        layout="@layout/autocomplete_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_name"
+        app:layout_constraintStart_toEndOf="@id/til_portion"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <include android:id="@+id/til_calories"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_portion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <include android:id="@+id/til_protein"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_calories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/til_fat"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <include android:id="@+id/til_fat"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_calories"
+        app:layout_constraintStart_toEndOf="@id/til_protein"
+        app:layout_constraintEnd_toStartOf="@id/til_carbs"
+        android:layout_margin="@dimen/spacing"/>
+
+    <include android:id="@+id/til_carbs"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_calories"
+        app:layout_constraintStart_toEndOf="@id/til_fat"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <ImageButton
+        android:id="@+id/ib_confirm"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/icon_check_mark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/ac_confirm"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/vivoxia_fragment_scroll">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/ncv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/vivoxia_linear_layout_scrollable">
+
+            <include android:id="@+id/sl_calf"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_thigh"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_forearm"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_bicep"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_hips"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_waist"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_chest"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_shoulders"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_neck"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_weight"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_clavicles"
+                layout="@layout/slider_layout"/>
+
+            <include android:id="@+id/sl_body_fat"
+                layout="@layout/slider_layout"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageButton
+        android:id="@+id/ib_save"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/spacing"
+        android:background="@drawable/icon_save"
+        android:contentDescription="@string/ac_save"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

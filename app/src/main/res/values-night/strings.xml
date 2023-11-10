@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- General -->
+    <string name="app_name">Vivoxia</string>
+    <string name="forward_slash">/</string>
+    <string name="question_mark">\?</string>
+
+    <!-- Food -->
+    <string name="protein_capitalized">Protein</string>
+    <string name="fat_capitalized">Fat</string>
+    <string name="carbs_capitalized">Carbs</string>
+    <string name="calories_capitalized">Calories</string>
+    <string name="diet_capitalized">Diet</string>
+
+    <!-- Exercise -->
+    <string name="exercise_capitalized">Exercise</string>
+
+    <!-- Body -->
+    <string name="calf_capitalized">Calf</string>
+    <string name="thigh_capitalized">Thigh</string>
+    <string name="forearm_capitalized">Forearm</string>
+    <string name="bicep_capitalized">Bicep</string>
+    <string name="hips_capitalized">Hips</string>
+    <string name="waist_capitalized">Waist</string>
+    <string name="chest_capitalized">Chest</string>
+    <string name="shoulders_capitalized">Shoulders</string>
+    <string name="neck_capitalized">Neck</string>
+    <string name="weight_capitalized">Weight</string>
+    <string name="clavicles_capitalized">Clavicles</string>
+    <string name="height_capitalized">Height</string>
+    <string name="body_fat_capitalized">Body Fat</string>
+    <string name="body_capitalized">Body</string>
+
+    <!-- Content Description -->
+    <string name="ac_diet_icon">Diet Icon</string>
+    <string name="ac_exercise_icon">Exercise Icon</string>
+    <string name="ac_body_icon">Body Icon</string>
+    <string name="ac_save">Save</string>
+    <string name="ac_auto_fill">Auto Fill</string>
+    <string name="ac_duplicate">Duplicate</string>
+    <string name="ac_delete">Delete</string>
+    <string name="ac_start">Start</string>
+    <string name="ac_add">Add</string>
+    <string name="ac_scroll">Scroll</string>
+    <string name="ac_previous">Previous</string>
+    <string name="ac_pause">Pause</string>
+    <string name="ac_confirm">Confirm</string>
+    <string name="ac_next">Next</string>
+    <string name="ac_slider">Slider</string>
+    <string name="ac_return">Return</string>
+    <string name="ac_settings">Settings</string>
+
+    <!-- Android Hint -->
+    <string name="ah_chart_measure">Chart Measure</string>
+
+    <!-- Android Text -->
+    <string name="at_legs">Legs</string>
+    <string name="at_arms">Arms</string>
+    <string name="at_core">Core</string>
+    <string name="at_torso">Torso</string>
+    <string name="at_other">Other</string>
+    <string name="at_latest">Latest</string>
+    <string name="at_add">Add</string>
+    <string name="at_end">End</string>
+    <string name="at_edit_chart">Edit Chart</string>
+    <string name="at_select_exercise">Select Exercise</string>
+    <string name="at_select_food">Select Food</string>
+    <string name="at_sets">Sets</string>
+    <string name="at_weight">Weight</string>
+    <string name="at_effort">Effort</string>
+    <string name="at_reps">Reps</string>
+    <string name="at_weekly_goal">Weekly Goal</string>
+    <string name="at_daily_intake">Daily Intake</string>
+
+</resources>

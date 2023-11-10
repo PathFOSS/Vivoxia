@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/vivoxia_fragment">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include android:id="@+id/cl_calories"
+            layout="@layout/slider_layout"/>
+
+        <include android:id="@+id/cl_protein"
+            layout="@layout/slider_layout"/>
+
+        <include android:id="@+id/cl_fat"
+            layout="@layout/slider_layout"/>
+
+        <include android:id="@+id/cl_carbs"
+            layout="@layout/slider_layout"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_down"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/icon_move_down"
+        app:layout_constraintBottom_toTopOf="@id/ib_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/spacing"
+        android:contentDescription="@string/ac_next"/>
+
+    <ImageButton
+        android:id="@+id/ib_save"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/icon_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/ac_save"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

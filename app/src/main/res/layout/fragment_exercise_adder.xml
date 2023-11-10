@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/vivoxia_dialog">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/vivoxia_text_normal_center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/title_text_size"/>
+
+    <include android:id="@+id/til_sets"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <include android:id="@+id/cl_reps_weight"
+        layout="@layout/double_text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/til_sets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <include android:id="@+id/cl_rest_work"
+        layout="@layout/double_text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/cl_reps_weight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <include android:id="@+id/til_effort"
+        layout="@layout/autocomplete_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/cl_rest_work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"/>
+
+    <Button
+        android:id="@+id/b_add"
+        style="@style/vivoxia_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/wide_button_height"
+        app:layout_constraintTop_toBottomOf="@id/til_effort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/at_add"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/vivoxia_fragment">
+
+    <TextView
+        android:id="@+id/tv_reps_title"
+        style="@style/vivoxia_text_normal_center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_effort_title"
+        android:text="@string/at_reps"/>
+
+    <TextView
+        android:id="@+id/tv_reps_value"
+        style="@style/vivoxia_timer_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_reps_title"
+        app:layout_constraintStart_toStartOf="@id/tv_reps_title"
+        app:layout_constraintEnd_toEndOf="@id/tv_reps_title"/>
+
+    <TextView
+        android:id="@+id/tv_effort_title"
+        style="@style/vivoxia_text_normal_center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_reps_title"
+        app:layout_constraintEnd_toStartOf="@id/tv_weight_title"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/at_effort"/>
+
+    <TextView
+        android:id="@+id/tv_effort_value"
+        style="@style/vivoxia_timer_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_effort_title"
+        app:layout_constraintStart_toStartOf="@id/tv_effort_title"
+        app:layout_constraintEnd_toEndOf="@id/tv_effort_title"/>
+
+    <TextView
+        android:id="@+id/tv_weight_title"
+        style="@style/vivoxia_text_normal_center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_effort_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/at_weight"/>
+
+    <TextView
+        android:id="@+id/tv_weight_value"
+        style="@style/vivoxia_timer_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_weight_title"
+        app:layout_constraintStart_toStartOf="@id/tv_weight_title"
+        app:layout_constraintEnd_toEndOf="@id/tv_weight_title"/>
+
+    <include android:id="@+id/til_effort"
+        layout="@layout/autocomplete_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/tv_effort_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"
+        android:visibility="gone"/>
+
+    <include android:id="@+id/til_reps"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/tv_effort_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"
+        android:visibility="gone"/>
+
+    <include android:id="@+id/til_weight"
+        layout="@layout/text_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_layout_height"
+        app:layout_constraintTop_toBottomOf="@id/tv_effort_value"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/spacing"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_exercise"
+        style="@style/vivoxia_text_normal_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/tv_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="0dp"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/vivoxia_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        style="@style/vivoxia_text_normal_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/ib_previous"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        app:layout_constraintTop_toTopOf="@id/ib_pause"
+        app:layout_constraintBottom_toBottomOf="@id/ib_pause"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/icon_skip_previous"
+        android:contentDescription="@string/ac_previous"/>
+
+    <ImageButton
+        android:id="@+id/ib_pause"
+        android:layout_width="@dimen/timer_pause_button_height"
+        android:layout_height="@dimen/timer_pause_button_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ib_previous"
+        app:layout_constraintEnd_toStartOf="@id/ib_next"
+        android:background="@drawable/icon_pause"
+        android:contentDescription="@string/ac_pause"/>
+
+    <ImageButton
+        android:id="@+id/ib_next"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        app:layout_constraintTop_toTopOf="@id/ib_pause"
+        app:layout_constraintBottom_toBottomOf="@id/ib_pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/icon_skip_next"
+        android:contentDescription="@string/ac_next"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
