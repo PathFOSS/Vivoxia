@@ -9,7 +9,8 @@
         android:id="@+id/act"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="0dp"
+        android:paddingVertical="0dp"
+        android:labelFor="@id/act"
         android:inputType="none"/>
 
 </com.google.android.material.textfield.TextInputLayout>
