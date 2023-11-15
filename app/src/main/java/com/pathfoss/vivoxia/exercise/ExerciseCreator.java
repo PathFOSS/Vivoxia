@@ -197,7 +197,7 @@ public class ExerciseCreator extends Fragment {
 
                 Exercise existingExercise = exerciseDataBase.getExercise(exerciseName);
 
-                double sum = 0;
+                float sum = 0;
                 for (int i = 0; i < 10; i++) {
                     float value = ReusableMethods.getTextInputEditTextValue(metHashMap.get(i)) / 100;
                     percentHashMap.put(i, value);
