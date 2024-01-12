@@ -33,6 +33,7 @@ import com.pathfoss.vivoxia.exercise.ExerciseGoals;
 import com.pathfoss.vivoxia.exercise.ExerciseJournal;
 import com.pathfoss.vivoxia.exercise.ExerciseJournalDataBase;
 import com.pathfoss.vivoxia.exercise.ExerciseTimer;
+import com.pathfoss.vivoxia.nutrition.Food;
 import com.pathfoss.vivoxia.nutrition.FoodCreator;
 import com.pathfoss.vivoxia.nutrition.FoodDashboard;
 import com.pathfoss.vivoxia.nutrition.FoodDataBase;
@@ -86,6 +87,8 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
     private ListPopupWindow listPopupWindow;
 
     private boolean popupWindowVisible = false;
+
+    public static List<String> foodList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +150,8 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
             }
             popupWindowVisible = !popupWindowVisible;
         });
+
+        cacheFood();
     }
 
     // Create method to create a new menu items group array
@@ -385,6 +390,19 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
     private Object[][] getFromGroupMap(int key) {
         Object[][] output = menuGroupMap.get(key);
         return output != null ? output : new Object[][]{};
+    }
+
+    // Create method to cache a large food list in memory
+    private void cacheFood() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                for (Food food : Controller.getFoodDataBase().getFoodList()) {
+                    foodList.add(food.getName());
+                }
+            }
+        };
+        thread.start();
     }
 
     // Create a method to change top bar color through an interface

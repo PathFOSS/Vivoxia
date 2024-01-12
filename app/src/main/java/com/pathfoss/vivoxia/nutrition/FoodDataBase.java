@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.pathfoss.vivoxia.general.Controller;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,6 +73,7 @@ public class FoodDataBase extends SQLiteOpenHelper {
                 + food.getFiber() + ", "
                 + food.getAlcohol() + ")"
         );
+        Controller.foodList.add(food.getName());
     }
 
     // Create method to fetch a food entry from the database

@@ -10,20 +10,31 @@
         style="@style/vivoxia_text_title"
         android:layout_width="0dp"
         android:layout_height="@dimen/wide_button_height"
+        android:layout_marginEnd="@dimen/spacing"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ib_add"
+        app:layout_constraintEnd_toStartOf="@+id/ib_download"
         android:gravity="center_vertical"/>
+
+    <ImageButton
+        android:id="@+id/ib_download"
+        android:layout_width="@dimen/wide_button_height"
+        android:layout_height="@dimen/wide_button_height"
+        android:layout_marginEnd="@dimen/spacing"
+        app:layout_constraintEnd_toStartOf="@id/ib_add"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/icon_download"
+        android:contentDescription="@string/ac_add"/>
 
     <ImageButton
         android:id="@+id/ib_add"
         android:layout_width="@dimen/wide_button_height"
         android:layout_height="@dimen/wide_button_height"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_title"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/icon_add"
         android:contentDescription="@string/ac_add"/>
+
 
     <include android:id="@+id/til"
         layout="@layout/text_input_layout_search_bar"

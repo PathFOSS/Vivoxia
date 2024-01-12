@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape android:shape="rectangle">
+        <solid android:color="@color/vivoxia"/>
+        <corners
+            android:bottomLeftRadius="@dimen/corner_radius"
+            android:bottomRightRadius="@dimen/corner_radius"
+            android:topLeftRadius="@dimen/corner_radius"
+            android:topRightRadius="@dimen/corner_radius"/>
+        <size android:width="@dimen/button_height"
+            android:height="@dimen/button_height"/>
+        <padding android:top="@dimen/image_button_padding" android:bottom="@dimen/image_button_padding" android:left="@dimen/image_button_padding" android:right="@dimen/image_button_padding"/>
+    </shape>
+</item>
+<item>
+    <vector android:height="24dp" android:tint="@color/vivoxia_background"
+        android:viewportHeight="24" android:viewportWidth="24"
+        android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+        <path android:fillColor="@color/vivoxia_background" android:pathData="M5,20h14v-2H5V20zM19,9h-4V3H9v6H5l7,7L19,9z"/>
+    </vector>
+</item>
+</layer-list>

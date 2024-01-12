@@ -9,20 +9,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-
 import com.google.android.material.textfield.TextInputEditText;
 import com.pathfoss.vivoxia.R;
 import com.pathfoss.vivoxia.general.Controller;
 import com.pathfoss.vivoxia.general.EntryAddedListener;
 import com.pathfoss.vivoxia.general.ReusableMethods;
 import com.pathfoss.vivoxia.general.TopBarListener;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class FoodSelector extends DialogFragment {
@@ -48,14 +43,8 @@ public class FoodSelector extends DialogFragment {
         TextInputEditText searchBar = view.findViewById(R.id.til).findViewById(R.id.met);
         ListView foodListView = view.findViewById(R.id.lv);
 
-        // Create the food list
-        List<String> foodList = new ArrayList<>();
-        for (Food food : Controller.getFoodDataBase().getFoodList()) {
-            foodList.add(food.getName());
-        }
-
         // Set searchable adapter to list
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_view_item, foodList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_view_item, Controller.foodList);
         foodListView.setAdapter(adapter);
 
         // Change result according to user input in search bar
@@ -63,15 +52,25 @@ public class FoodSelector extends DialogFragment {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) { adapter.getFilter().filter(s);}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (start >= 2) {
+                    adapter.getFilter().filter(s);
+                }
+            }
             @Override
             public void afterTextChanged(Editable s) {}
         });
 
         // Set click listeners for individual food items
         foodListView.setOnItemClickListener((parent, viewContainer, position, id) -> {
-            selectedFood = Controller.getFoodDataBase().getEntry(foodList.get(position));
+            selectedFood = Controller.getFoodDataBase().getEntry((String) ((TextView) viewContainer).getText());
             new FoodAdder(entryAddedListener).show(getParentFragmentManager(), "Food Adder");
+            dismiss();
+        });
+
+        // Set click listener to import foods from online source
+        view.findViewById(R.id.ib_download).setOnClickListener(v -> {
+            new FoodImporter().show(getParentFragmentManager(), "Food Importer");
             dismiss();
         });
 

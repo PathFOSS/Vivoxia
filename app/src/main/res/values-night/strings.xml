@@ -52,6 +52,7 @@
 
     <!-- Android Hint -->
     <string name="ah_chart_measure">Chart Measure</string>
+    <string name="ah_search">Search</string>
 
     <!-- Android Text -->
     <string name="at_legs">Legs</string>
@@ -71,5 +72,7 @@
     <string name="at_reps">Reps</string>
     <string name="at_weekly_goal">Weekly Goal</string>
     <string name="at_daily_intake">Daily Intake</string>
+    <string name="at_import_data">Import Data</string>
+    <string name="at_cancel">Cancel</string>
 
 </resources>

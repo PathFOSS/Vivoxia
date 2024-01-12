@@ -3,14 +3,15 @@
     android:id="@+id/til"
     style="@style/vivoxia_dropdown"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/text_input_layout_height">
+    android:layout_height="@dimen/text_input_layout_height"
+    android:orientation="vertical">
 
     <AutoCompleteTextView
         android:id="@+id/act"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingVertical="0dp"
+        android:inputType="none"
         android:labelFor="@id/act"
-        android:inputType="none"/>
+        android:paddingVertical="0dp" />
 
 </com.google.android.material.textfield.TextInputLayout>
