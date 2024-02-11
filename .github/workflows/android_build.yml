@@ -49,18 +49,31 @@ jobs:
       - name: Upload test report
         uses: actions/upload-artifact@v2
         with:
-          name: unit-test-report
+          name: unit_test_report
           path: app/build/reports/tests/testDebugUnitTest/
-  build:
-    runs-on: ubuntu-latest
 
+  instrumentation-test:
+    needs: [unit-test]
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout the code
+        uses: actions/checkout@v4
 
-      - name: Run a one line script
-        run: echo Hello 1
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+          cache: gradle
 
-      - name: Run many lines
-        run: |
-          echo Hello 2
-          echo Hello 3
+      - name: Run Espresso tests
+        uses: reactivecircus/adnroid-emulator-runner@v2
+        with:
+          api-level: 34
+          script: ./gradlew connectedCheck
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: instrumentation_test_report
+          path: app/build/reports/androidTests/connected/
