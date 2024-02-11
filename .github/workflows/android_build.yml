@@ -89,8 +89,8 @@ jobs:
           name: instrumentation_test_report
           path: app/build/reports/androidTests/connected/
 
-
   package:
+    needs: [instrumentation-test]
     name: Generate APK
     runs-on: ubuntu-latest
     steps:
