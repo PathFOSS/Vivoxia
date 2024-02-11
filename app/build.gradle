@@ -1,6 +1,14 @@
 plugins {
     id 'com.android.application'
-    id "org.sonarqube" version "3.2.0"
+    id "org.sonarqube" version "4.4.1.3373"
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "myProjectKey"
+        property "sonar.organization", "myOrganization"
+        property "sonar.host.url", "myHostUrl"
+    }
 }
 
 android {
