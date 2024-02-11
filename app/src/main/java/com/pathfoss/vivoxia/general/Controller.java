@@ -277,6 +277,8 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
     }
 
     // Create method to use Android system back button to function as back arrow
+
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
         if (previousGroup != 0) {
