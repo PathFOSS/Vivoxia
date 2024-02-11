@@ -1,1 +1,12 @@
-/build
+/build/tmp
+/build/intermediates
+/build/generated
+/build/reports/lint-results-debug.txt
+/build/test-results/testDebugUnitTest/binary/results.bin
+/build/outputs/logs/manifest-merger-debug-report.txt
+/build/outputs/logs/manifest-merger-release-report.txt
+/build/test-results/testReleaseUnitTest/binary/results.bin
+/build/test-results/testDebugUnitTest/binary/output.bin
+/build/test-results/testReleaseUnitTest/binary/output.bin
+/build/test-results/testDebugUnitTest/binary/output.bin.idx
+/build/test-results/testReleaseUnitTest/binary/output.bin.idx
