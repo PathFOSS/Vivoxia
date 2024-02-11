@@ -67,7 +67,7 @@ jobs:
           cache: gradle
 
       - name: Run Espresso tests
-        uses: reactivecircus/adnroid-emulator-runner@v2
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 34
           script: ./gradlew connectedCheck
