@@ -105,6 +105,6 @@ jobs:
           cache: gradle
 
       - name: SonarCloud scan
-        run: ./gradlew app:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} --scan
+        run: ./gradlew app:sonar -D sonar.login=${{ secrets.SONAR_TOKEN }} --scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB.TOKEN }}
