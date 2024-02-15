@@ -16,20 +16,28 @@ The app might crash for no reason since it is still in early development. Please
 
 Deleting the app, clearing cache, or losing your phone means that all your data is lost.
 
+## Food Import Utility
+
+### Why is the food import feature taking so long?
+The download is actually quite small at ~100kB, however the migration to the database takes on average a minimum of four hours.
+
+### How many foods will it import?
+Around 1,000,000 foods, including those from all American brands.
+
+### Can I choose to not import certain food groups?
+Currently, no. This feature will be implemented in the future.
+
 ## Future Features
 
-1. Food list imports from online sources (saved locally)
-2. Exercise list imports from online sources (saved locally)
-3. More advanced graphing options (e.g. measuring volume per muscle or overlaying two measures)
-4. Include alcohol and fiber in macronutrients options
-5. Vibration for the timer
-6. Pacing sound for the timer
+1. Exercise list imports from online sources (saved locally)
+2. More advanced graphing options (e.g. measuring volume per muscle or overlaying two measures)
+3. Include alcohol and fiber in macronutrients options
+4. Vibration for the timer
+5. Pacing sound for the timer
 
 ## Specifications
 
 Name: Vivoxia
-
-Newest version: 1.0.0
 
 Supported Android version: 6.0 and above
 
