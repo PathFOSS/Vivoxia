@@ -33,7 +33,7 @@ Deleting the app, clearing cache, or losing your phone means that all your data 
 
 ## Set Goals
 
-<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/set_goals.png"/>
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/set_goals.png"/>
 
 <br/>
 <br/>
@@ -52,7 +52,7 @@ Deleting the app, clearing cache, or losing your phone means that all your data 
 
 Create new foods and exercises with high customization freedom. Add these to your daily journals, change their order, and duplicate or delete them as you please.
 
-<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/create_and_edit.png"/>
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/create_and_edit.png"/>
 
 <br/>
 <br/>
@@ -69,7 +69,7 @@ Create new foods and exercises with high customization freedom. Add these to you
 
 ## View Over a Dozen Type of Charts
 
-<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/chart_edit.png"/>
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/chart_edit.png"/>
 
 <br/>
 <br/>
@@ -88,7 +88,7 @@ Create new foods and exercises with high customization freedom. Add these to you
 
 Go back in time or journal for tomorrow with the calendar feature, import over a million foods with the food import function, and edit preferences as you please.
 
-<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/extra_features.png"/>
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/extra_features.png"/>
 
 <br/>
 <br/>
