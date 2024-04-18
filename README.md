@@ -22,6 +22,8 @@ The application is completely Free and Open Source (FOSS) and falls under the GP
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
 
 ## Important notice
 
@@ -35,6 +37,8 @@ Deleting the app, clearing cache, or losing your phone means that all your data 
 
 <img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/set_goals.png"/>
 
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -66,11 +70,15 @@ Create new foods and exercises with high customization freedom. Add these to you
 <br/>
 <br/>
 <br/>
+<br/>
+<br/>
 
 ## View Over a Dozen Type of Charts
 
 <img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/chart_edit.png"/>
 
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
@@ -90,6 +98,8 @@ Go back in time or journal for tomorrow with the calendar feature, import over a
 
 <img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/extra_features.png"/>
 
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
