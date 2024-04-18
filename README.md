@@ -8,6 +8,21 @@ The app supports all units and can be configured with both imperial and metric u
 
 The application is completely Free and Open Source (FOSS) and falls under the GPLv3 license.
 
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/Vivoxia/preview.png"/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Important notice
 
 Vivoxia is optimized for phones. Tablets and wearables might work but probably won't.
@@ -15,6 +30,78 @@ Vivoxia is optimized for phones. Tablets and wearables might work but probably w
 The app might crash for no reason since it is still in early development. Please create an issue whenever possible.
 
 Deleting the app, clearing cache, or losing your phone means that all your data is lost.
+
+## Set Goals
+
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/set_goals.png"/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## Create, Update, Journal, and Delete
+
+Create new foods and exercises with high customization freedom. Add these to your daily journals, change their order, and duplicate or delete them as you please.
+
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/create_and_edit.png"/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## View Over a Dozen Type of Charts
+
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/chart_edit.png"/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+## Change History, Import Foods, and Customize Settings
+
+Go back in time or journal for tomorrow with the calendar feature, import over a million foods with the food import function, and edit preferences as you please.
+
+<img align="left" src="https://github.com/PathFOSS/README-Images/blob/main/DullPhone/extra_features.png"/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## Food Import Utility
 
