@@ -144,6 +144,12 @@
         <item name="android:gravity">right</item>
     </style>
 
+    <style name="vivoxia_text_secondary_right_value">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:gravity">right</item>
+    </style>
+
     <style name="vivoxia_text_bold_left">
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textStyle">bold</item>

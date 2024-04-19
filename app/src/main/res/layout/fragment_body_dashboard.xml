@@ -15,9 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="20dp"/>
 
-
     <include android:id="@+id/cl_targets"
-        layout="@layout/dual_textview_layout"
+        layout="@layout/measures_textview_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

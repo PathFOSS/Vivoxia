@@ -25,25 +25,27 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <include android:id="@+id/cl_protein"
-            layout="@layout/dual_textview_layout"
+            layout="@layout/measures_textview_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"/>
 
         <include android:id="@+id/cl_fat"
-            layout="@layout/dual_textview_layout"
+            layout="@layout/measures_textview_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"/>
 
         <include android:id="@+id/cl_carbs"
-            layout="@layout/dual_textview_layout"
+            layout="@layout/measures_textview_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"/>
 
         <include android:id="@+id/cl_calories"
-            layout="@layout/dual_textview_layout"/>
+            layout="@layout/measures_textview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

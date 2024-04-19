@@ -64,10 +64,20 @@ public class FoodDashboard extends Fragment {
         TextView tvCarbsValue = clCarbs.findViewById(R.id.tv_value);
         TextView tvCaloriesValue = clCalories.findViewById(R.id.tv_value);
 
-        tvProteinValue.setText(getValueText("PROTEIN", getString(R.string.protein_capitalized), " g"));
-        tvFatValue.setText(getValueText("FAT", getString(R.string.fat_capitalized), " g"));
-        tvCarbsValue.setText(getValueText("CARBS", getString(R.string.carbs_capitalized), " g"));
-        tvCaloriesValue.setText(getValueText("CALORIES", getString(R.string.calories_capitalized), " kcal"));
+        TextView tvProteinGoal = clProtein.findViewById(R.id.tv_goal);
+        TextView tvFatGoal = clFat.findViewById(R.id.tv_goal);
+        TextView tvCarbsGoal = clCarbs.findViewById(R.id.tv_goal);
+        TextView tvCaloriesGoal = clCalories.findViewById(R.id.tv_goal);
+
+        tvProteinValue.setText(getValueText("PROTEIN", " g"));
+        tvFatValue.setText(getValueText("FAT", " g"));
+        tvCarbsValue.setText(getValueText("CARBS", " g"));
+        tvCaloriesValue.setText(getValueText("CALORIES", " kcal"));
+
+        tvProteinGoal.setText(getGoalText(getString(R.string.protein_capitalized), " g"));
+        tvFatGoal.setText(getGoalText(getString(R.string.fat_capitalized), " g"));
+        tvCarbsGoal.setText(getGoalText(getString(R.string.carbs_capitalized), " g"));
+        tvCaloriesGoal.setText(getGoalText(getString(R.string.calories_capitalized), " kcal"));
 
         // Create the chart view
         new DashBoardChart(bc, barEntryList, Units.getFoodChartItemGoal(), dataType).updateBarChart();
@@ -77,8 +87,14 @@ public class FoodDashboard extends Fragment {
 
     // Create method to assign text to each value TextView
     @NonNull
-    private String getValueText (String COL_QUERIED, String name, String suffix) {
-        return Units.decimalFormat.format(foodJournalDataBase.getDailySum(COL_QUERIED, today)) + " " + suffix + "     |     " + Units.decimalFormat.format(sharedPreferences.getFloat(name, 0f)) + suffix;
+    private String getValueText (String COL_QUERIED, String suffix) {
+        return Units.decimalFormat.format(foodJournalDataBase.getDailySum(COL_QUERIED, today));
+    }
+
+    // Create method to assign text to each goal TextView
+    @NonNull
+    private String getGoalText (String name, String suffix) {
+        return Units.decimalFormat.format(sharedPreferences.getFloat(name, 0f)) + suffix;
     }
 
     // Create method to fetch and modify database values

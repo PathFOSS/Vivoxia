@@ -28,6 +28,7 @@ public class BodyDashboard extends Fragment {
     private LinkedHashMap<String, Float> linkedHashMap;
 
     private String textValue;
+    private String goalText;
     private String dataType;
 
     @Override
@@ -47,6 +48,7 @@ public class BodyDashboard extends Fragment {
         BarChart bc = view.findViewById(R.id.bc);
         ((TextView) clTargets.findViewById(R.id.tv_title)).setText(getString(R.string.at_latest));
         ((TextView) clTargets.findViewById(R.id.tv_value)).setText(textValue);
+        ((TextView) clTargets.findViewById(R.id.tv_goal)).setText(goalText);
 
         // Create the chart view
         new DashBoardChart(bc, barEntryList, Units.getBodyChartItemGoal(), dataType).updateBarChart();
@@ -85,7 +87,8 @@ public class BodyDashboard extends Fragment {
             textGoalValue = Units.toHeightIfApplicable((int) goalValue, dataType);
         }
 
-        textValue = textLatestValue + " " + dataType + "     |     " + textGoalValue + " " + dataType;
+        textValue = textLatestValue;
+        goalText = textGoalValue + " " + dataType;
     }
 
     // Create null-safe method to get values from HashMaps
