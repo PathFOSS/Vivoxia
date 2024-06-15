@@ -57,7 +57,7 @@ public class FoodCreator extends Fragment {
         TextInputEditText metCarbs = tilCarbs.findViewById(R.id.met);
 
         metName.setInputType(InputType.TYPE_CLASS_TEXT);
-        
+
         //Create click listeners
         ReusableMethods.setAutoCompleteTextViewParameters(requireContext(), view.findViewById(R.id.act), unitList, 0).setOnItemClickListener((parent, view1, position, id) -> unitIndex = position);
 

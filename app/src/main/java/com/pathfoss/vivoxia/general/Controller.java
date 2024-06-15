@@ -3,11 +3,13 @@ package com.pathfoss.vivoxia.general;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -49,8 +51,8 @@ import java.util.List;
 import java.util.Objects;
 
 @SuppressLint("SimpleDateFormat")
-public class Controller extends AppCompatActivity implements ViewChangeListener, TopBarListener, DialogListener {
-    
+public class Controller extends AppCompatActivity implements ViewChangeListener, TopBarListener, DialogListener, SelectorClickedListener {
+
     private static FoodDataBase foodDataBase;
     private static FoodJournalDataBase foodJournalDataBase;
     private static BodyJournalDataBase bodyJournalDataBase;
@@ -68,7 +70,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
 
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor sharedPreferencesEditor;
-    
+
     private static final SimpleDateFormat dataBaseDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private static final SimpleDateFormat topBarDateFormat = new SimpleDateFormat("MMM d, yyyy");
     private final HashMap<Integer, Object[][]> menuGroupMap = new HashMap<>();
@@ -93,7 +95,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         // Initialize SharedPreferences objects
         sharedPreferences = getSharedPreferences("General", Context.MODE_PRIVATE);
         sharedPreferencesEditor = sharedPreferences.edit();
@@ -119,24 +121,24 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
         llArrow = findViewById(R.id.ll_arrow);
         tvTitle = findViewById(R.id.tv_title);
         llSettings = findViewById(R.id.ll_settings);
-        
+
         clBottomBar = findViewById(R.id.cl_bottom_bar);
 
         clDiet = findViewById(R.id.cl_diet);
         clExercise = findViewById(R.id.cl_exercise);
         clBody = findViewById(R.id.cl_body);
-        
+
         objects.put(clDiet, new Object[]{clBottomBar.findViewById(R.id.iv_diet), R.drawable.icon_diet_background, R.drawable.icon_diet_highlight});
         objects.put(clExercise, new Object[]{clBottomBar.findViewById(R.id.iv_exercise), R.drawable.icon_exercise_background, R.drawable.icon_exercise_highlight});
         objects.put(clBody, new Object[]{clBottomBar.findViewById(R.id.iv_body), R.drawable.icon_body_background, R.drawable.icon_body_highlight});
 
         toggleBottomBarHighlights(clExercise);
-        
+
         // Set DPI measure for conversions from pixels
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         Units.phoneDPI = metrics.densityDpi;
-        
+
         // Initialize menu and listeners
         setBottomBarListeners();
         initializeGlobalMenu();
@@ -170,7 +172,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
         listPopupWindow = new ListPopupWindow(new ContextThemeWrapper(this, R.style.vivoxia_popup_menu));
 
         listPopupWindow.setAnchorView(llSettings);
-        listPopupWindow.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.background_dropdown));
+        listPopupWindow.setBackgroundDrawable(AppCompatResources.getDrawable(this, R.drawable.background_dropdown_menu));
         listPopupWindow.setWidth(Units.convertDPtoPX(150));
         listPopupWindow.setVerticalOffset(0);
         listPopupWindow.setHorizontalOffset(-Units.convertDPtoPX(110));
@@ -200,7 +202,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
         menuGroupMap.put(206, new Object[][]{{0, "Settings"}});
 
         fragmentMenuMap.put(200, new Pair<>(new ExerciseDashboard(), sharedPreferences.getString("ExerciseChartItem", "Volume / Workout") + " (" + Units.getExerciseDataType() + ")"));
-        fragmentMenuMap.put(201, new Pair<>(new ExerciseJournal(this, this), today));
+        fragmentMenuMap.put(201, new Pair<>(new ExerciseJournal(this, this, this), today));
         fragmentMenuMap.put(202, new Pair<>(new ExerciseGoals(this), "Set Goals"));
         fragmentMenuMap.put(203, new Pair<>(new EditChart(this, "ExerciseChartItem", "Volume / Workout"), ""));
         fragmentMenuMap.put(204, new Pair<>(new EditDate(context, (DateChangeListener) Objects.requireNonNull(fragmentMenuMap.get(201)).first, System.currentTimeMillis()), ""));
@@ -340,7 +342,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
 
     // Create method to set the back arrow to swap to previous Fragments
     private void setBottomBarListeners() {
-        
+
         clDiet.setOnClickListener( v -> {
             getSupportFragmentManager().beginTransaction().replace(R.id.fcv_main, (new FoodDashboard())).commit();
             toggleBottomBarHighlights(clDiet);
@@ -348,7 +350,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
             tvTitle.setText(titleText);
             currentGroup = 100;
         });
-        
+
         clExercise.setOnClickListener( v -> {
             getSupportFragmentManager().beginTransaction().replace(R.id.fcv_main, new ExerciseDashboard()).commit();
             toggleBottomBarHighlights(clExercise);
@@ -359,7 +361,7 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
             tvTitle.setText(titleText);
             currentGroup = 200;
         });
-        
+
         clBody.setOnClickListener( v -> {
             getSupportFragmentManager().beginTransaction().replace(R.id.fcv_main, new BodyDashboard()).commit();
             toggleBottomBarHighlights(clBody);
@@ -401,6 +403,9 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
             public void run() {
                 for (Food food : Controller.getFoodDataBase().getFoodList()) {
                     foodList.add(food.getName());
+                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    foodList.sort(null);
                 }
             }
         };
@@ -472,5 +477,16 @@ public class Controller extends AppCompatActivity implements ViewChangeListener,
 
     public static int getColorNaturalWhite() {
         return colorNaturalWhite;
+    }
+
+    @Override
+    public void selectorClicked(View viewFocus) {
+
+        System.out.println("focus is" + viewFocus);
+        if (viewFocus != null) {
+
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(viewFocus.getWindowToken(), 0);
+        }
     }
 }

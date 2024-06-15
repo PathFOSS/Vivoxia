@@ -71,6 +71,7 @@ public class ReusableMethods {
 
     // Create method to graphically set up AutoCompleteTextViews
     public static void setScrollChangeListener(@NonNull NestedScrollView nestedScrollView, ViewChangeListener viewChangeListener) {
+        nestedScrollView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         nestedScrollView.setOnScrollChangeListener((View.OnScrollChangeListener) (v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
             if (oldScrollY == 0 && scrollY > 0) {
                 viewChangeListener.onScrollDown(true);

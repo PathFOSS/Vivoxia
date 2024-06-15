@@ -55,7 +55,7 @@ public class FoodAdder extends DialogFragment {
 
         tilAmount.setHint("Amount");
         tilUnit.setHint("Unit");
-        
+
         ((TextView) view.findViewById(R.id.tv_title)).setText(food.getName());
 
         // Set click listeners

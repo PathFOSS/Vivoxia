@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/text_input_layout_height"
     android:layout_marginBottom="@dimen/spacing"
-    app:endIconDrawable="@drawable/icon_search"
+    app:startIconDrawable="@drawable/icon_search"
     app:endIconMode="custom">
 
     <com.google.android.material.textfield.TextInputEditText

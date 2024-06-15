@@ -1,17 +1,17 @@
 <resources>
     <style name="Theme.Vivoxia" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        
+
         <item name="colorPrimary">@color/vivoxia</item>
         <item name="colorPrimaryVariant">@color/vivoxia</item>
         <item name="colorOnPrimary">@color/natural_white</item>
-        
+
         <item name="colorSecondary">@color/vivoxia</item>
         <item name="colorSecondaryVariant">@color/vivoxia</item>
         <item name="colorOnSecondary">@color/natural_white</item>
         <item name="colorPrimaryDark">@color/vivoxia_background</item>
 
         <item name="android:navigationBarColor">@color/vivoxia_foreground</item>
-        
+
         <item name="textInputStyle">@style/vivoxia_til_style</item>
     </style>
 
@@ -92,7 +92,6 @@
     </style>
 
     <style name="vivoxia_bottom_bar">
-        <item name="android:background">@color/vivoxia_foreground</item>
         <item name="android:textViewStyle">@style/vivoxia_bottom_bar_text_view</item>
     </style>
 

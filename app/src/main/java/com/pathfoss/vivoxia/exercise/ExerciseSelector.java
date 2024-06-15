@@ -1,5 +1,6 @@
 package com.pathfoss.vivoxia.exercise;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -19,6 +20,7 @@ import com.pathfoss.vivoxia.R;
 import com.pathfoss.vivoxia.general.Controller;
 import com.pathfoss.vivoxia.general.EntryAddedListener;
 import com.pathfoss.vivoxia.general.ReusableMethods;
+import com.pathfoss.vivoxia.general.SelectorClickedListener;
 import com.pathfoss.vivoxia.general.TopBarListener;
 import com.pathfoss.vivoxia.general.ViewChangeListener;
 
@@ -32,10 +34,12 @@ public class ExerciseSelector extends DialogFragment {
 
     private final TopBarListener topBarListener;
     private final EntryAddedListener entryAddedListener;
+    private final SelectorClickedListener selectorClickedListener;
 
-    public ExerciseSelector (TopBarListener topBarListener, EntryAddedListener entryAddedListener) {
+    public ExerciseSelector (TopBarListener topBarListener, EntryAddedListener entryAddedListener, SelectorClickedListener selectorClickedListener) {
         this.topBarListener = topBarListener;
         this.entryAddedListener = entryAddedListener;
+        this.selectorClickedListener = selectorClickedListener;
     }
 
     @Nullable
@@ -48,11 +52,13 @@ public class ExerciseSelector extends DialogFragment {
         ((TextView) view.findViewById(R.id.tv_title)).setText(getString(R.string.at_select_exercise));
         TextInputEditText searchBar = view.findViewById(R.id.til).findViewById(R.id.met);
         ListView exerciseListView = view.findViewById(R.id.lv);
-        
+
         // Create the exercise list
         List<String> exerciseList = new ArrayList<>();
         for (Exercise exercise : Controller.getExerciseDataBase().getExerciseList()) {
             exerciseList.add(exercise.getName());
+        } if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            exerciseList.sort(null);
         }
 
         // Set searchable adapter to list
@@ -71,8 +77,8 @@ public class ExerciseSelector extends DialogFragment {
 
         // Set click listeners for individual exercise items
         exerciseListView.setOnItemClickListener((parent, viewContainer, position, id) -> {
-            selectedExercise = Controller.getExerciseDataBase().getExercise(exerciseList.get(position));
-            new ExerciseAdder(entryAddedListener).show(getParentFragmentManager(), "Exercise Adder");
+            selectedExercise = Controller.getExerciseDataBase().getExercise((String) ((TextView) viewContainer).getText());
+            new ExerciseAdder(entryAddedListener, selectorClickedListener).show(getParentFragmentManager(), "Exercise Adder");
             dismiss();
         });
 

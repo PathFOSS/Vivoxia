@@ -92,7 +92,6 @@
     </style>
 
     <style name="vivoxia_bottom_bar">
-        <item name="android:background">@color/vivoxia_foreground</item>
         <item name="android:textViewStyle">@style/vivoxia_bottom_bar_text_view</item>
     </style>
 

@@ -18,6 +18,7 @@ import com.pathfoss.vivoxia.general.Controller;
 import com.pathfoss.vivoxia.general.DateChangeListener;
 import com.pathfoss.vivoxia.general.EntryAddedListener;
 import com.pathfoss.vivoxia.general.ReusableMethods;
+import com.pathfoss.vivoxia.general.SelectorClickedListener;
 import com.pathfoss.vivoxia.general.TopBarListener;
 import com.pathfoss.vivoxia.general.Units;
 import com.pathfoss.vivoxia.general.ViewChangeListener;
@@ -37,15 +38,17 @@ public class ExerciseJournal extends Fragment implements DateChangeListener, Ent
     private final ExerciseJournalDataBase exerciseJournalDataBase = Controller.getExerciseJournalDataBase();
     private final ViewChangeListener viewChangeListener;
     private final TopBarListener topBarListener;
+    private final SelectorClickedListener selectorClickedListener;
     private final HashMap<Boolean, Integer> visibilityMap = new HashMap<>();
-    
+
     private int exerciseSelectedID;
     private boolean exerciseSelected = false;
 
     // Create a constructor for setting UI change listener
-    public ExerciseJournal (ViewChangeListener viewChangeListener, TopBarListener topBarListener) {
+    public ExerciseJournal (ViewChangeListener viewChangeListener, TopBarListener topBarListener, SelectorClickedListener selectorClickedListener) {
         this.viewChangeListener = viewChangeListener;
         this.topBarListener = topBarListener;
+        this.selectorClickedListener = selectorClickedListener;
     }
 
     @Override
@@ -69,7 +72,7 @@ public class ExerciseJournal extends Fragment implements DateChangeListener, Ent
 
         // Set listeners for views
         ReusableMethods.setScrollChangeListener(view.findViewById(R.id.ncv), viewChangeListener);
-        view.findViewById(R.id.ib_add).setOnClickListener(v -> new ExerciseSelector(topBarListener, this).show(getParentFragmentManager(), "Exercise Selector"));
+        view.findViewById(R.id.ib_add).setOnClickListener(v -> new ExerciseSelector(topBarListener, this, selectorClickedListener).show(getParentFragmentManager(), "Exercise Selector"));
         ibPlay.setOnClickListener( v -> {
             if (linearLayout.getChildCount() > 0) {
                 Controller.changeGroupIDs(206);
@@ -98,7 +101,7 @@ public class ExerciseJournal extends Fragment implements DateChangeListener, Ent
 
     // Create method to draw all journal entries from database from specific date
     private void drawEntries(){
-        
+
         // Prepare container for entries
         linearLayout.removeAllViews();
         toggleButtons(false);
@@ -118,7 +121,7 @@ public class ExerciseJournal extends Fragment implements DateChangeListener, Ent
             ((TextView) child.findViewById(R.id.tv_top_right)).setText(topRightText);
             ((TextView) child.findViewById(R.id.tv_bottom_left)).setText(bottomLeftText);
             ((TextView) child.findViewById(R.id.tv_bottom_right)).setText(bottomRightText);
-            
+
             linearLayout.addView(child);
             createExerciseEntryViewListener(child);
         }
